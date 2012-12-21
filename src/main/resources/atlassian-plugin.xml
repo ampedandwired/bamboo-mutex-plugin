@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+  </plugin-info>
+  <!-- internationalize your plugin -->
+  <resource type="i18n" name="ampedandwired language" location="english"/>
+  <preChainAction key="planMutexChain" name="Prevent plans from running at the same time" class="ampedandwired.bamboo.plugin.mutex.PlanMutexPreChainAction">
+    <description>Prevent plans from running simultaneously</description>
+    <resource type="freemarker" name="edit" location="planMutexEdit.ftl"/>
+    <resource type="freemarker" name="view" location="planMutexView.ftl"/>
+  </preChainAction>
+  <additionalBuildConfigurationPlugin key="planMutexConfig" name="Plan Mutex Configuration"
+        class="ampedandwired.bamboo.plugin.mutex.PlanMutexConfigurationPlugin">
+    <description>Plugin to configure what plans must not run simultaneously</description>
+    <resource type="freemarker" name="edit" location="planMutexEdit.ftl"/>
+    <resource type="freemarker" name="view" location="planMutexView.ftl"/>
+  </additionalBuildConfigurationPlugin>
+</atlassian-plugin>

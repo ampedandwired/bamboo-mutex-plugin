@@ -1,0 +1,7 @@
+[#if build.buildDefinition.customConfiguration.get('custom.bamboo.planMutex.list')?has_content ]
+    [@ui.bambooInfoDisplay titleKey='Plan Mutex' float=false height='80px']
+        [@ww.label label='Plan Mutex Key' ]
+            [@ww.param name='value']${build.buildDefinition.customConfiguration.get('custom.bamboo.planMutex.list')?if_exists}[/@ww.param]
+        [/@ww.label]
+    [/@ui.bambooInfoDisplay]
+[/#if]
