@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.github.ampedandwired</groupId>
     <artifactId>bamboo-mutex-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <organization>
         <name>ampedandwired</name>
         <url>http://ampedandwired.com</url>
