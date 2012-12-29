@@ -15,7 +15,7 @@ You may have to restart Bamboo after installing the plugin.
 Usage
 -----
 
-The plugin is configured on the "Miscellaneous" tab of the plan configuration. There is a single text entry field that allows you to specify the mutex "key" for the plan. If two or more plans have the same mutex key, this plugin will prevent them from running simultaneously.
+The plugin is configured on the "Miscellaneous" tab of the plan configuration. There is a single text entry field that allows you to specify the mutex "key" for the plan. If two or more plans have the same mutex key (case sensitive), this plugin will prevent them from running simultaneously.
 
 Note that specifying multiple keys on a single plan is not supported right now (could be done as an enhancement if there is demand).
 
