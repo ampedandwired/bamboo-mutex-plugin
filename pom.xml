@@ -2,20 +2,36 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ampedandwired</groupId>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    <groupId>com.github.ampedandwired</groupId>
     <artifactId>bamboo-mutex-plugin</artifactId>
     <version>1.0.0</version>
     <organization>
         <name>ampedandwired</name>
-        <url>http://github.com/ampedandwired</url>
+        <url>http://ampedandwired.com</url>
     </organization>
     <name>bamboo-mutex-plugin</name>
-    <description>Allows you to prevent plans from running simultaneously</description>
+    <description>Bamboo plugin that prevents plans from running simultaneously</description>
     <packaging>atlassian-plugin</packaging>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://mit-license.org/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:ampedandwired/bamboo-mutex-plugin.git</url>
+        <connection>scm:git:git@github.com:ampedandwired/bamboo-mutex-plugin.git</connection>
+    </scm>
     <properties>
         <bamboo.version>4.3.1</bamboo.version>
         <bamboo.data.version>3.2.2</bamboo.data.version>
-        <amps.version>4.1.1</amps.version>
+        <amps.version>4.1.2</amps.version>
     </properties>
     <dependencies>
         <dependency>
@@ -56,6 +72,19 @@
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
