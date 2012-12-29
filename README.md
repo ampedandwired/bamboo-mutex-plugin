@@ -7,7 +7,7 @@ This is an [Atlassian Bamboo](http://www.atlassian.com/software/bamboo) plugin t
 Installation
 ------------
 
-Use the [Bamboo plugin manager](https://confluence.atlassian.com/display/BAMBOO/Add-ons) to install the latest version of this plugin from the project's [maven repository]().
+Use the [Bamboo plugin manager](https://confluence.atlassian.com/display/BAMBOO/Add-ons) to install the latest version of this plugin's jar from the project's [maven repository](http://repo1.maven.org/maven2/com/github/ampedandwired/bamboo-mutex-plugin/).
 
 You may have to restart Bamboo after installing the plugin.
 
