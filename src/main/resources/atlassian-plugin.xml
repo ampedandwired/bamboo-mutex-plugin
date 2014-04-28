@@ -8,11 +8,12 @@
   </plugin-info>
   <!-- internationalize your plugin -->
   <resource type="i18n" name="ampedandwired language" location="english"/>
-  <preChainAction key="planMutexChain" name="Prevent plans from running at the same time" class="ampedandwired.bamboo.plugin.mutex.PlanMutexPreChainAction">
-    <description>Prevent plans from running simultaneously</description>
-    <resource type="freemarker" name="edit" location="planMutexEdit.ftl"/>
-    <resource type="freemarker" name="view" location="planMutexView.ftl"/>
+  <preChainAction key="planMutexPreChainAction" name="Prevent plans from running at the same time (acquires mutex)" class="ampedandwired.bamboo.plugin.mutex.PlanMutexPreAndPostChainAction">
+    <description>Prevent plans from running simultaneously by acquiring mutex</description>
   </preChainAction>
+  <postChainAction key="planMutexPostChainAction" name="Prevent plans from running at the same time (releases mutex)" class="ampedandwired.bamboo.plugin.mutex.PlanMutexPreAndPostChainAction">
+    <description>Prevent plans from running simultaneously by releasing mutex</description>
+  </postChainAction>
   <additionalBuildConfigurationPlugin key="planMutexConfig" name="Plan Mutex Configuration"
         class="ampedandwired.bamboo.plugin.mutex.PlanMutexConfigurationPlugin">
     <description>Plugin to configure what plans must not run simultaneously</description>
